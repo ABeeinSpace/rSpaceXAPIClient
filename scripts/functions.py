@@ -32,6 +32,7 @@ def displayMenu():
       input("Press enter to continue... ")
     elif userInput == "3":
       id = input("Please provide a launch ID as specified by the API: ")
+      
       print("Accessing info for specified SpaceX launch....")
       jsonResponse = requestsDriver.requestArbitraryLaunch(id)
       launch = requestsDriver.createLaunchObject(jsonResponse)
