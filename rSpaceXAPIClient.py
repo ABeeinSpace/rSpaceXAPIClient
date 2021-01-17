@@ -1,8 +1,8 @@
-# from scripts.functions import displayMenu
-from scripts import functions
+from scripts.functions import displayMenu
+
 
 def main():
-  functions.displayMenu()
+  displayMenu()
 
 
 if __name__ == "__main__":
