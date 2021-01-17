@@ -1,0 +1,42 @@
+{
+  "legacy_id": "JRTI-2",
+  "model": "Marmac 303",
+  "type": "Barge",
+  "roles": [
+    "ASDS barge"
+  ],
+  "imo": null,
+  "mmsi": null,
+  "abs": null,
+  "class": null,
+  "mass_kg": null,
+  "mass_lbs": null,
+  "year_built": 2015,
+  "home_port": "Port Canaveral",
+  "status": null,
+  "speed_kn": null,
+  "course_deg": null,
+  "latitude": null,
+  "longitude": null,
+  "last_ais_update": null,
+  "link": null,
+  "image": "https://i.imgur.com/7VMC0Gn.jpg",
+  "launches": [
+    "5eb87cf0ffd86e000604b343",
+    "5eb87cfdffd86e000604b34c",
+    "5eb87d05ffd86e000604b354",
+    "5eb87d08ffd86e000604b357",
+    "5eb87d0affd86e000604b359",
+    "5eb87d1fffd86e000604b36b",
+    "5eb87d25ffd86e000604b370",
+    "5eb87d28ffd86e000604b373",
+    "5ef6a2090059c33cee4a828b",
+    "5ef6a2e70059c33cee4a8293",
+    "5eb87d4dffd86e000604b38e",
+    "5eb87d4bffd86e000604b38c",
+    "5eb87d4fffd86e000604b393"
+  ],
+  "name": "Just Read The Instructions 2",
+  "active": true,
+  "id": "5ea6ed2f080df4000697c910"
+}
