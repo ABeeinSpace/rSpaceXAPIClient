@@ -33,7 +33,16 @@ class Launches:
       self.__missionDescription = "NOT FOUND"
     else:
       self.__missionDescription = missionDescription
-  
+    
+  def updateValues(self, payload, rocketSerial, jsonResponse):
+    """
+    docstring
+    """
+    self.updatePayload(id=payload)
+    self.updateRocketSerial(id=rocketSerial)
+    self.updateDroneshipName(jsonResponse)
+    self.updateMissionDescription(jsonResponse)
+    
   def __str__(self):
     """
     docstring
@@ -177,10 +186,6 @@ def createLaunchObject(jsonResponse):
   payloadIDString = payloadID[0]
   coreID = jsonResponse["cores"][0]["core"]
   launch = Launches(rocketSerial=0, missionName=name, droneShip="", payload="")
-  launch.updatePayload(id=payloadIDString)
-  launch.updateRocketSerial(id=coreID)
-  launch.updateDroneshipName(jsonResponse)
-  launch.updateMissionDescription(jsonResponse)
   return launch
 
   
