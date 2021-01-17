@@ -42,10 +42,15 @@ class Launches:
     print("Launch Info".center(80))
     print()
     print(f"Mission Name: {self.__missionName}")
+    print()
     print(f"Payload: {self.__payload}")
+    print()
     print(f"Booster Serial #: {self.__rocketSerial}")
+    print()
     print(f"Landing Zone Name: {self.__droneShip}")
+    print()
     print("Mission Description:", end="\n"); 
+
     for each in wrappedMissionDescription: print(f"{each}")
     return ""
 
@@ -148,7 +153,7 @@ def requestArbitraryLaunch(id):
     print(f"HTTP error occured: {http_err}")
   except Exception as err:
     print(f"Other error occured: {err}")
-    
+
 def requestLatestLaunch():
     """
     docstring

@@ -1,2 +1,4 @@
 /.DS_Store
 /.venv
+scripts/__pycache__/functions.cpython-39.pyc
+scripts/__pycache__/requestsDriver.cpython-39.pyc
