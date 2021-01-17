@@ -34,14 +34,6 @@ class Launches:
     else:
       self.__missionDescription = missionDescription
     
-  def updateValues(self, payload, rocketSerial, jsonResponse):
-    """
-    docstring
-    """
-    self.updatePayload(id=payload)
-    self.updateRocketSerial(id=rocketSerial)
-    self.updateDroneshipName(jsonResponse)
-    self.updateMissionDescription(jsonResponse)
     
   def __str__(self):
     """
@@ -62,6 +54,15 @@ class Launches:
 
     for each in wrappedMissionDescription: print(f"{each}")
     return ""
+
+  def updateValues(self, payload, rocketSerial, jsonResponse):
+    """
+    docstring
+    """
+    self.updatePayload(id=payload)
+    self.updateRocketSerial(id=rocketSerial)
+    self.updateDroneshipName(jsonResponse)
+    self.updateMissionDescription(jsonResponse)
 
   def updatePayload(self, id):
     """
@@ -186,6 +187,7 @@ def createLaunchObject(jsonResponse):
   payloadIDString = payloadID[0]
   coreID = jsonResponse["cores"][0]["core"]
   launch = Launches(rocketSerial=0, missionName=name, droneShip="", payload="")
+  launch.updateValues(payloadIDString, rocketSerial=coreID, jsonResponse=jsonResponse)
   return launch
 
   
