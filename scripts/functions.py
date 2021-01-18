@@ -49,6 +49,7 @@ def notableLaunchesMenu():
   """
   Menu to display a few interesting launches as determined by yours truly. 
   """
+  # TODO: Add Arabsat-6A and the Falcon Heavy test flight
   userInput = "2"
   while userInput != "4":
     print("".center(80, "="))
