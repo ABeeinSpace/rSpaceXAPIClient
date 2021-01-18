@@ -37,7 +37,7 @@ class Launches:
     
   def __str__(self):
     """
-    docstring
+    Prints infos stored in the Launches class
     """
     wrappedMissionDescription = textwrap.wrap(self.__missionDescription)
     print("Launch Info".center(80))
@@ -66,7 +66,7 @@ class Launches:
 
   def updatePayload(self, id):
     """
-    docstring
+    Queries the API for payload info and updates the private payload name var in the class
     """
     id = str(id)
     url = str("http://api.spacexdata.com/v4/payloads/" + id)
@@ -86,7 +86,7 @@ class Launches:
 
   def updateRocketSerial(self, id):
     """
-    docstring
+    Queries API for infos and then updates the private var in the class
     """
     serial = str(id)
     url = str("http://api.spacexdata.com/v4/cores/" + serial)
@@ -107,7 +107,7 @@ class Launches:
 
   def updateDroneshipName(self, jsonResponse):
     """
-    docstring
+    Queries API for droneship info and then updates the class instance 
     """
     shipID = str(jsonResponse["cores"][0]["landpad"])
     url = str("http://api.spacexdata.com/v4/landpads/" + shipID)
@@ -136,7 +136,7 @@ class Launches:
 
 def requestNextLaunch():
   """
-  docstring
+  API caller for the JSON on the next launch so that it can be used elsewhere
   """
   try:
     response = requests.get("http://api.spacexdata.com/v4/launches/next")
@@ -150,7 +150,7 @@ def requestNextLaunch():
     
 def requestArbitraryLaunch(id):
   """
-  docstring
+  API caller to request JSON for a launch specified by the user
   """
   launchID = str(id)
   url = str("http://api.spacexdata.com/v4/launches/"+ launchID)
@@ -166,7 +166,7 @@ def requestArbitraryLaunch(id):
 
 def requestLatestLaunch():
     """
-    docstring
+    API caller to get JSON for the last launch 
     """
     try:
       response = requests.get("http://api.spacexdata.com/v4/launches/latest")
@@ -180,7 +180,7 @@ def requestLatestLaunch():
 
 def createLaunchObject(jsonResponse):
   """
-  docstring
+  Method to create an instance of the Launches class, and then call updateValues() to populate the instance
   """
   name = jsonResponse["name"]
   payloadID = jsonResponse["payloads"]
@@ -200,7 +200,7 @@ def createLaunchObject(jsonResponse):
 
 def main():
   """
-  docstring
+  It's a tester. If it wasn't present, Dr. Lewis would feel a random chill down his spine every time I ran my program.
   """
   jsonResponse = requestNextLaunch()
   launch = createLaunchObject(jsonResponse)

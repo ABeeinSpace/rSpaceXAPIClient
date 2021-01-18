@@ -47,7 +47,7 @@ def displayMenu():
 
 def notableLaunchesMenu():
   """
-  docstring
+  Menu to display a few interesting launches as determined by yours truly. 
   """
   userInput = "2"
   while userInput != "4":
@@ -55,8 +55,11 @@ def notableLaunchesMenu():
     print("Notable Launches".center(80, " "))
     print("".center(80, "="))
     print()
+    # I saw Crew-1 with my girlfriend, and it was the first operational launch of SpaceX's Crew Dragon capsule
     print("1) Crew-1")
+    # Demo-2 was the first Crew Dragon mission on which there were people. 
     print("2) Demo-2")
+    # LZ-1 landing
     print("3) NROL-108")
     print("4) Return to Main Menu")
     print()
