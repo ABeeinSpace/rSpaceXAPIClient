@@ -49,9 +49,8 @@ def notableLaunchesMenu():
   """
   Menu to display a few interesting launches as determined by yours truly. 
   """
-  # TODO: Add Arabsat-6A and the Falcon Heavy test flight
   userInput = "2"
-  while userInput != "4":
+  while userInput != "6":
     print("".center(80, "="))
     print("Notable Launches".center(80, " "))
     print("".center(80, "="))
@@ -62,7 +61,9 @@ def notableLaunchesMenu():
     print("2) Demo-2")
     # LZ-1 landing
     print("3) NROL-108")
-    print("4) Return to Main Menu")
+    print("4) Arabsat 6A")
+    print("5) Falcon Heavy Test Flight")
+    print("6) Return to Main Menu")
     print()
     userInput = input("Please select an option: ")
 
@@ -87,6 +88,18 @@ def notableLaunchesMenu():
       print(launch)
       input("Press enter to continue... ")
     elif userInput == "4":
+      id = "5eb87d2dffd86e000604b376"
+      jsonResponse = requestsDriver.requestArbitraryLaunch(id)
+      launch = requestsDriver.createLaunchObject(jsonResponse)
+      print(launch)
+      input("Press enter to continue... ")
+    elif userInput == "5":
+      id = "5eb87d13ffd86e000604b360"
+      jsonResponse = requestsDriver.requestArbitraryLaunch(id)
+      launch = requestsDriver.createLaunchObject(jsonResponse)
+      print(launch)
+      input("Press enter to continue... ")
+    elif userInput == "6":
       break
     else:
       print("\033[1;31m" + "Please input a valid menu option." + "\033[0m")

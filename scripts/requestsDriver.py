@@ -50,10 +50,12 @@ class Launches:
     print()
     print(f"Landing Zone Name: {self.__droneShip}")
     print()
-    print("Mission Description:", end="\n"); 
-
+    print("Mission Description:", end="\n");
     for each in wrappedMissionDescription: print(f"{each}")
+    print()
+    print(f"Webcast Link: {self.__webcastLink}")
     return ""
+
 
   def updateValues(self, payload, rocketSerial, jsonResponse):
     """
@@ -63,6 +65,7 @@ class Launches:
     self.updateRocketSerial(id=rocketSerial)
     self.updateDroneshipName(jsonResponse)
     self.updateMissionDescription(jsonResponse)
+    self.updateLivestreamLink(jsonResponse)
 
   def updatePayload(self, id):
     """
@@ -124,6 +127,13 @@ class Launches:
     except Exception as err:
       print(f"Other error occured: {err}")
       return
+
+  def updateLivestreamLink(self, jsonResponse):
+    """
+    Queries API for droneship info and then updates the class instance 
+    """
+    livestreamLink = str(jsonResponse["links"]["webcast"])
+    self.__webcastLink = livestreamLink
 
   def updateMissionDescription(self, jsonResponse):
     """
