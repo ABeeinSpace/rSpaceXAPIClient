@@ -42,6 +42,8 @@ def displayMenu():
       notableLaunchesMenu()
     elif userInput == "5":
       break
+    elif userInput == "6":
+      superSecretEasterEgg()
     else:
       print("\033[1;31m" + "Please input a valid menu option." + "\033[0m")
 
@@ -49,7 +51,13 @@ def superSecretEasterEgg():
   """
   An easter egg. SSSSSSHHHHH its a SEEEEEECRET
   """
-  pass
+  print("".center(80,"="))
+  print("Credits".center(80))
+  print("".center(80,"="))
+  print()
+  print(f"I have to credit a number of people with making this little piece of software possible.\nDr. Jason Lewis, professor at Florida Southern College. I've learned to like writing Python code, even if I thought your class would turn me against Python for good. \nThe users of the SpaceX subreddit. I would not have an API to query if not for their hard work. \nAs always with a programming project, Stack Exchange proved really helpful for figuring out the requests module.\nAnd finally, Python documentation writers. You people are awesome.")
+  input("Press enter to continue...")
+
 
 def notableLaunchesMenu():
   """
