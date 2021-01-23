@@ -45,6 +45,12 @@ def displayMenu():
     else:
       print("\033[1;31m" + "Please input a valid menu option." + "\033[0m")
 
+def superSecretEasterEgg():
+  """
+  An easter egg. SSSSSSHHHHH its a SEEEEEECRET
+  """
+  pass
+
 def notableLaunchesMenu():
   """
   Menu to display a few interesting launches as determined by yours truly. 

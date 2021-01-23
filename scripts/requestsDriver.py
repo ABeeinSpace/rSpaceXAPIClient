@@ -6,7 +6,7 @@ import textwrap
 
 class Launches:
   """
-  The Launches class uses the response from the r/SpaceX API to create a collection of launch data for me to use later.
+  The Launches class uses the response from the r/SpaceX API to create a collection of launch data for me to use later, mainly to output to stdout
   """
   def __init__(self, rocketSerial=0, missionName="", droneShip="", payload="", missionDescription=""):
     if missionName == "":
@@ -37,7 +37,7 @@ class Launches:
     
   def __str__(self):
     """
-    Prints infos stored in the Launches class
+    Prints infos stored in the Launches class or a class instance to stdout
     """
     wrappedMissionDescription = textwrap.wrap(self.__missionDescription)
     print("Launch Info".center(80))
@@ -59,7 +59,7 @@ class Launches:
 
   def updateValues(self, payload, rocketSerial, jsonResponse):
     """
-    docstring
+    A stub method of sorts to allow me to call one method in order to update everything about a new Launches instance
     """
     self.updatePayload(id=payload)
     self.updateRocketSerial(id=rocketSerial)
@@ -67,9 +67,11 @@ class Launches:
     self.updateMissionDescription(jsonResponse)
     self.updateLivestreamLink(jsonResponse)
 
+  # Ok so I realize this can be a bit confusing and why I did things in a seemingly weird way is not necessarily explained by just reading the code. I can't call the updater methods in __init__ because they would throw a not found error. So I have to call them later on, in this case updateValues() is called from createLaunchObject() in order to run the three updater methods so that __str__() has proper values to display to the user
+
   def updatePayload(self, id):
     """
-    Queries the API for payload info and updates the private payload name var in the class
+    Queries the API for payload info and updates the private payload name var in the class instance
     """
     id = str(id)
     url = str("http://api.spacexdata.com/v4/payloads/" + id)
@@ -89,7 +91,7 @@ class Launches:
 
   def updateRocketSerial(self, id):
     """
-    Queries API for infos and then updates the private var in the class
+    Queries API for infos and then updates the private var in the class instance
     """
     serial = str(id)
     url = str("http://api.spacexdata.com/v4/cores/" + serial)
