@@ -48,12 +48,18 @@ class Launches:
     print()
     print(f"Booster Serial #: {self.__rocketSerial}")
     print()
-    print(f"Landing Zone Name: {self.__droneShip}")
+    if self.__droneShip =="NOT FOUND":
+      print(f"Landing Zone information is not avaiable yet")
+    else:
+      print(f"Landing Zone: {self.__droneShip}")
     print()
     print("Mission Description:", end="\n");
     for each in wrappedMissionDescription: print(f"{each}")
     print()
-    print(f"Webcast Link: {self.__webcastLink}")
+    if self.__webcastLink == "None":
+      print("Webcast link is forthcoming once T-0 is a bit closer")
+    else:
+      print(f"Webcast Link: {self.__webcastLink}")
     return ""
 
 
