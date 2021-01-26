@@ -37,7 +37,7 @@ class Launches:
     
   def __str__(self):
     """
-    Prints infos stored in the Launches class or a class instance to stdout
+    Prints infos stored in the Launches class or a class instance to stdout, with some extra text in case some info isn't present explaining what's likely preventing that info from showing up
     """
     wrappedMissionDescription = textwrap.wrap(self.__missionDescription)
     print("Launch Info".center(80))
